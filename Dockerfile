@@ -10,7 +10,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 # Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
     nodejs \
-    npm \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
