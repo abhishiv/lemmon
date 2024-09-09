@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install zip \
     && docker-php-ext-install bcmath \
     && docker-php-ext-install pcntl \
+    && docker-php-ext-install sockets \
     && docker-php-ext-install pdo pdo_pgsql
 
 # Install Composer
