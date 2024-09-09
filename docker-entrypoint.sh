@@ -5,7 +5,7 @@ set -e
 php artisan migrate --force
 
 # Run database seeders
-php artisan db:seed --force
+# php artisan db:seed --force
 
 service nginx start
 # Start PHP-FPM server
