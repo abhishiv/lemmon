@@ -35,6 +35,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy existing application directory contents
 COPY . .
 
+COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
+
 # Install PHP dependencies
 RUN composer install --no-autoloader --no-scripts
 
@@ -51,8 +53,6 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Expose the specified port
 EXPOSE 8000
-
-COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
 
 # Set the entrypoint
 ENTRYPOINT ["docker-entrypoint.sh"]
