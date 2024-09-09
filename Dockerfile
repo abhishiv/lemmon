@@ -1,5 +1,7 @@
+FROM ghcr.io/roadrunner-server/roadrunner:2024 as roadrunner
+
 # Use the official PHP 8.2 image as a base
-FROM dunglas/frankenphp:1-php8.2-bookworm
+FROM php:8.2-fpm
 
 # Set working directory
 WORKDIR /var/www/html
@@ -49,6 +51,8 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Expose the specified port
 EXPOSE 8000
+
+COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
 
 # Set the entrypoint
 ENTRYPOINT ["docker-entrypoint.sh"]
