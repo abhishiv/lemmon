@@ -36,9 +36,15 @@ RUN composer dump-autoload --optimize
 
 # Set up permissions (if needed)
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+# Set up permissions (if needed)
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Expose port 80
+# Copy entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+# Expose the port specified by the environment variable, default to 80
 EXPOSE 80
-
-# Run Laravel's built-in server (or use a web server like Nginx)
-CMD ["php-fpm"]
