@@ -30,7 +30,12 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install bcmath \
     && docker-php-ext-install pcntl \
     && docker-php-ext-install sockets \
-    && docker-php-ext-install pdo pdo_pgsql imagick
+    && docker-php-ext-install pdo pdo_pgsql
+
+RUN apt-get install -y \
+    libmagickwand-dev --no-install-recommends \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
