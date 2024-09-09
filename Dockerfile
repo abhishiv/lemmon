@@ -9,6 +9,7 @@ WORKDIR /var/www/html
 # Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
     nodejs \
+    npm \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
