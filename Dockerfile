@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y \
     postgresql-client \
     libpq-dev \
     nginx \
+    imagemagick \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && docker-php-ext-install mysqli pdo pdo_mysql \
@@ -29,7 +30,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install bcmath \
     && docker-php-ext-install pcntl \
     && docker-php-ext-install sockets \
-    && docker-php-ext-install pdo pdo_pgsql
+    && docker-php-ext-install pdo pdo_pgsql imagick
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
