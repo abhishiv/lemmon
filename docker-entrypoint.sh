@@ -9,4 +9,5 @@ php artisan migrate --force
 
 # Start PHP-FPM server
 # php artisan serve
-php artisan serve --host=0.0.0.0
+# php artisan serve --host=0.0.0.0
+php artisan octane:start -n --host 0.0.0.0
