@@ -9,6 +9,7 @@
   "license": "MIT",
   "require": {
     "php": "^8.0.2",
+    "ext-bcmath": "*",
     "barryvdh/laravel-dompdf": "^2.0",
     "bugsnag/bugsnag-laravel": "^2.26",
     "doctrine/dbal": "^3.6",
@@ -17,6 +18,7 @@
     "laravel-notification-channels/onesignal": "^2.4",
     "laravel/framework": "^9.11",
     "laravel/horizon": "^5.10",
+    "laravel/octane": "^1.5",
     "laravel/sanctum": "^2.14.1",
     "laravel/tinker": "^2.7",
     "laravelcollective/html": "^6.3",
@@ -26,8 +28,8 @@
     "simplesoftwareio/simple-qrcode": "~4",
     "spatie/laravel-activitylog": "^4.5",
     "spatie/laravel-permission": "^5.5",
-    "yajra/laravel-datatables-oracle": "^10.0",
-    "ext-bcmath" : "*"
+    "spiral/roadrunner": "^2.8.2",
+    "yajra/laravel-datatables-oracle": "^10.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.7",

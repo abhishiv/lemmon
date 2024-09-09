@@ -21,4 +21,5 @@ yarn-error.log
 /.idea
 /.vscode
 mix-manifest.json
-/public/manifest.json
+/public/manifest.jsonrr
+.rr.yaml
