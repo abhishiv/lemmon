@@ -35,8 +35,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy existing application directory contents
 COPY . .
 
-COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
-
 # Install PHP dependencies
 RUN composer install --no-autoloader --no-scripts
 
@@ -46,6 +44,7 @@ RUN composer dump-autoload --optimize
 # Set up permissions (if needed)
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+COPY --from=roadrunner /usr/bin/rr /var/www/html/rr
 
 # Copy entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
