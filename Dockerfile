@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libsqlite3-dev \
     postgresql-client \
+    libpq-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && docker-php-ext-install mysqli pdo pdo_mysql \
