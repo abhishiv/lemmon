@@ -41,18 +41,11 @@ RUN composer dump-autoload --optimize
 
 # Set up permissions (if needed)
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-# Set up permissions (if needed)
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Copy Nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-
-# Set the default port for FrankenPHP
-ENV FRANKENPHP_PORT=8000
 
 # Expose the specified port
 EXPOSE 8000
