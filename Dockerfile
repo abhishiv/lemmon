@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     libsqlite3-dev \
     postgresql-client \
     libpq-dev \
+    nginx \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && docker-php-ext-install mysqli pdo pdo_mysql \
@@ -41,6 +42,9 @@ RUN composer dump-autoload --optimize
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 # Set up permissions (if needed)
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Copy Nginx configuration
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
