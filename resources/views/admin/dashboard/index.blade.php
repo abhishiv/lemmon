@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @push('scripts')
-    <script src="{{mix('/dist/js/admin.js', '../')}}" defer></script>
+    <script src="{{mix('/dist/js/admin.js', '..')}}" defer></script>
 @endpush
 @section('body_class', 'page-admin')
 @section('content')

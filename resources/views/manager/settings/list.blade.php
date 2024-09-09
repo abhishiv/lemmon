@@ -1,7 +1,7 @@
 @extends('layouts.manager')
 @push('scripts')
-    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '../') }}" defer></script>
-    <script src="{{mix('/dist/js/manager/settings.js', '../')}}" defer></script>
+    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '..') }}" defer></script>
+    <script src="{{mix('/dist/js/manager/settings.js', '..')}}" defer></script>
 @endpush
 
 @section('body_class', 'management-table full')

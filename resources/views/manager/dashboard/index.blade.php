@@ -1,13 +1,13 @@
 @extends('layouts.manager')
 @push('scripts')
-    <script src="{{ mix('/dist/js/libraries/jquery.timepicker.min.js', '../') }}"></script>
-    <script src="{{mix('dist/js/data-table.js', '../')}}" defer></script>
-    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '../') }}" defer></script>
-    <script type="text/javascript" src="{{mix('dist/js/general.js', '../')}}" defer></script>
-    <script src="{{mix('dist/js/manager/dashboard.js', '../')}}" type="module" defer></script>
+    <script src="{{ mix('/dist/js/libraries/jquery.timepicker.min.js', '..') }}"></script>
+    <script src="{{mix('dist/js/data-table.js', '..')}}" defer></script>
+    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '..') }}" defer></script>
+    <script type="text/javascript" src="{{mix('dist/js/general.js', '..')}}" defer></script>
+    <script src="{{mix('dist/js/manager/dashboard.js', '..')}}" type="module" defer></script>
 @endpush
 @push('styles')
-    <link rel="stylesheet" type="text/css" href="{{ mix('/dist/css/libraries/jquery.timepicker.min.css', '../') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ mix('/dist/css/libraries/jquery.timepicker.min.css', '..') }}"/>
 @endpush
 @section('body_class')
     {{ 'management-table no-content dashboard-role-' . auth()->user()->getRoleNames()[0] }}

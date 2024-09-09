@@ -11,23 +11,23 @@
     <title>{{ config('app.name', 'Lemmon') }}</title>
 
     {{-- ############### JQUERY ###############--}}
-    <script src="{{ mix('dist/js/libraries/jquery.min.js', '../') }}"></script>
+    <script src="{{ mix('dist/js/libraries/jquery.min.js', '..') }}"></script>
     <script>$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});</script>
 
     {{-- ############### SELECT ############### --}}
-    <link href="{{ mix('dist/css/libraries/select2.min.css', '../') }}" rel="stylesheet"/>
-    <script src="{{ mix('dist/js/libraries/select2.min.js', '../') }}"></script>
+    <link href="{{ mix('dist/css/libraries/select2.min.css', '..') }}" rel="stylesheet"/>
+    <script src="{{ mix('dist/js/libraries/select2.min.js', '..') }}"></script>
 
     {{-- ############### DataTable  ###############--}}
-    <link rel="stylesheet" type="text/css" href="{{ mix('dist/css/libraries/datatables.min.css', '../') }}"/>
-    <script type="text/javascript" src="{{ mix('dist/js/libraries/datatables.min.js', '../') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ mix('dist/css/libraries/datatables.min.css', '..') }}"/>
+    <script type="text/javascript" src="{{ mix('dist/js/libraries/datatables.min.js', '..') }}"></script>
 
     {{--    Local styles--}}
-    <link rel="stylesheet" href="{{ mix('/scss/new-staff.css', '../') }}">
+    <link rel="stylesheet" href="{{ mix('/scss/new-staff.css', '..') }}">
 
     @stack('styles')
 
-    <script src="{{mix('dist/js/libraries/epos-2.27.0.js', '../')}}" defer></script>
+    <script src="{{mix('dist/js/libraries/epos-2.27.0.js', '..')}}" defer></script>
 </head>
 
 <body class="@yield('body_class') {{ App::environment(['production']) ? '' : 'development-environment' }}">
@@ -89,9 +89,9 @@
             <span class="printer-bubble__icon icon-printer"></span>
         </div>
     </footer>
-    <script src="{{mix('dist/js/printer.js', '../')}}" defer></script>
-    <script src="{{mix('dist/js/new-staff.js', '../')}}" defer></script>
-    <script src="{{ mix('/dist/js/libraries/OneSignalSDK.min.js', '../') }}" async></script>
+    <script src="{{mix('dist/js/printer.js', '..')}}" defer></script>
+    <script src="{{mix('dist/js/new-staff.js', '..')}}" defer></script>
+    <script src="{{ mix('/dist/js/libraries/OneSignalSDK.min.js', '..') }}" async></script>
     @if(App::environment(['production']) || App::environment(['staging']))
         <script>
             window.OneSignal = window.OneSignal || [];

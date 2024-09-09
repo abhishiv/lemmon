@@ -1,7 +1,7 @@
 @extends('layouts.customer')
 @push('scripts')
-    <script type="module" src="{{ mix('/dist/js/libraries/bootstrap.bundle.min.js', '../') }}"></script>
-    <script type="module" src="{{ mix('/dist/js/customer/cart.js', '../') }}" defer></script>
+    <script type="module" src="{{ mix('/dist/js/libraries/bootstrap.bundle.min.js', '..') }}"></script>
+    <script type="module" src="{{ mix('/dist/js/customer/cart.js', '..') }}" defer></script>
 @endpush
 @section('class', 'main-cart')
 @section('cart-header')

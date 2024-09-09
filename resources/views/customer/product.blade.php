@@ -1,6 +1,6 @@
 @extends('layouts.customer')
 @push('scripts')
-    <script type="module" src="{{ mix('/dist/js/customer/menu.js', '../') }}" defer></script>
+    <script type="module" src="{{ mix('/dist/js/customer/menu.js', '..') }}" defer></script>
 @endpush
 @section('body_class', 'single-product-page')
 @section('class', 'product-menu')

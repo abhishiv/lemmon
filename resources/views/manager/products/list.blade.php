@@ -1,8 +1,8 @@
 @extends('layouts.manager')
 @push('scripts')
-    <script src="{{mix('/dist/js/data-table.js', '../')}}" defer></script>
-    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '../') }}" defer></script>
-    <script type="text/javascript" src="{{mix('/dist/js/general.js', '../')}}" defer></script>
+    <script src="{{mix('/dist/js/data-table.js', '..')}}" defer></script>
+    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '..') }}" defer></script>
+    <script type="text/javascript" src="{{mix('/dist/js/general.js', '..')}}" defer></script>
 @endpush
 @section('body_class', 'management-table')
 @section('content')

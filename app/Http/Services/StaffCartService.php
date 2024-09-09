@@ -298,7 +298,7 @@ class StaffCartService
 
         $settings = (new SettingService)->getSettings();
 
-        $vat = $this->isTakeAway() || $this->isDelivery() ? (float)$settings['takeaway_vat'] : (float)$settings['vat'];
+        $vat =  0;//$this->isTakeAway() || $this->isDelivery() ? (float)$settings['takeaway_vat'] : (float)$settings['vat'];
 
         $totals = [
             'currency' => __('labels.currency'),

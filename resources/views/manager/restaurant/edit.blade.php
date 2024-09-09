@@ -1,6 +1,6 @@
 @extends('layouts.manager')
 @push('scripts')
-    <script src="{{mix('/dist/js/manager.js', '../')}}" defer></script>
+    <script src="{{mix('/dist/js/manager.js', '..')}}" defer></script>
 @endpush
 @section('body_class', 'management-table')
 @section('content')

@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 @push('styles')
-    <link rel="stylesheet" type="text/css" href="{{ mix('/dist/css/libraries/jquery.timepicker.min.css', '../') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ mix('/dist/css/libraries/jquery.timepicker.min.css', '..') }}"/>
 @endpush
 
 @push('scripts')
-    <script src="{{ mix('/dist/js/libraries/jquery.timepicker.min.js', '../') }}"></script>
-    <script src="{{mix('/dist/js/admin.js', '../')}}" defer></script>
-    <script src="{{mix('/dist/js/admin/dashboard.js', '../')}}" type="module" defer></script>
+    <script src="{{ mix('/dist/js/libraries/jquery.timepicker.min.js', '..') }}"></script>
+    <script src="{{mix('/dist/js/admin.js', '..')}}" defer></script>
+    <script src="{{mix('/dist/js/admin/dashboard.js', '..')}}" type="module" defer></script>
 @endpush
 @section('body_class', 'management-table statistics-overview')
 @section('content')

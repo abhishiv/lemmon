@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 @push('scripts')
-    <script src="{{mix('/dist/js/data-table.js', '../')}}" defer></script>
-    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '../') }}" defer></script>
+    <script src="{{mix('/dist/js/data-table.js', '..')}}" defer></script>
+    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '..') }}" defer></script>
 @endpush
 @section('content')
     <form method="POST" action="{{ route('password.email') }}">

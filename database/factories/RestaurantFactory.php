@@ -30,6 +30,7 @@ class RestaurantFactory extends Factory
         'slug' => 'string',
         'onboarded_by' => "datetime",
         'onboarded_at' => "datetime",
+        'address' => "string",
     ])] public function definition(): array
     {
         $restaurantsNames = [
@@ -65,7 +66,8 @@ class RestaurantFactory extends Factory
             'slug' => $slug,
             'status' => $status,
             'onboarded_by' => 1,
-            'onboarded_at' => Carbon::now()
+            'onboarded_at' => Carbon::now(),
+            'address' => 'address',
         ];
     }
 }

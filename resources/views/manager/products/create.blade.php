@@ -1,10 +1,10 @@
 @extends('layouts.manager')
 @push('scripts')
     @include('manager.products.form-validation.error-messages')
-    <script type="text/javascript" src="{{ mix('/dist/js/slug.js', '../') }}" defer></script>
-    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '../') }}" defer></script>
-    <script type="text/javascript" src="{{ mix('/dist/js/manager-product.js', '../') }}" defer></script>
-    {{-- <script type="text/javascript" src="{{ mix('/dist/js/products.js', '../') }}" defer></script> --}}
+    <script type="text/javascript" src="{{ mix('/dist/js/slug.js', '..') }}" defer></script>
+    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '..') }}" defer></script>
+    <script type="text/javascript" src="{{ mix('/dist/js/manager-product.js', '..') }}" defer></script>
+    {{-- <script type="text/javascript" src="{{ mix('/dist/js/products.js', '..') }}" defer></script> --}}
 @endpush
 @section('body_class', 'management-table full')
 @section('content')

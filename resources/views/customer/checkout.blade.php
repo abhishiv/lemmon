@@ -1,6 +1,6 @@
 @extends('layouts.customer')
 @push('scripts')
-    <script type="text/javascript" src="{{ mix('/dist/js/customer/cart.js', '../') }}"></script>
+    <script type="text/javascript" src="{{ mix('/dist/js/customer/cart.js', '..') }}"></script>
 @endpush
 @section('content')
     <div class="checkout-container">

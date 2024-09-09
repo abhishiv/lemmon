@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @push('scripts')
-    <script src="{{mix('/dist/js/staff.js', '../')}}" defer></script>
-    <script src="{{mix('/dist/js/libraries/epos-2.27.0.js', '../')}}" defer></script>
-    <script src="{{mix('/dist/js/printer.js', '../')}}" defer></script>
+    <script src="{{mix('/dist/js/staff.js', '..')}}" defer></script>
+    <script src="{{mix('/dist/js/libraries/epos-2.27.0.js', '..')}}" defer></script>
+    <script src="{{mix('/dist/js/printer.js', '..')}}" defer></script>
 @endpush
 @section('body_class', 'page-staff page-staff--closed')
 @section('content')

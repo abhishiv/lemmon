@@ -1,8 +1,8 @@
 @extends('layouts.manager')
 @push('scripts')
     @include('manager.extras.form-validation.error-messages')
-    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '../') }}" defer></script>
-    <script type="text/javascript" src="{{ mix('/dist/js/manager-extra.js', '../') }}" defer></script>
+    <script type="text/javascript" src="{{ mix('dist/js/manager.js', '..') }}" defer></script>
+    <script type="text/javascript" src="{{ mix('/dist/js/manager-extra.js', '..') }}" defer></script>
 @endpush
 
 @section('body_class', 'management-table full')

@@ -1,6 +1,6 @@
 @extends('layouts.customer')
 @push('scripts')
-    {{--    <script src="{{mix('/dist/js/customer/order.js', '../')}}" defer></script>--}}
+    {{--    <script src="{{mix('/dist/js/customer/order.js', '..')}}" defer></script>--}}
 @endpush
 @section('class', 'failed-payment')
 @section('content')

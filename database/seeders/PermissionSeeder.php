@@ -72,17 +72,14 @@ class PermissionSeeder extends Seeder
             'staff_list_all_order',
         ];
 
-        foreach ($adminPermissions as $permission) {
-            Permission::create(['name' => $permission]);
+        $permissions = array_merge($adminPermissions, $managerPermissions, $staffPermissions);
+
+        foreach ($permissions as $permission) {
+            if (!Permission::where('name', $permission)->exists()) {
+                Permission::create(['name' => $permission]);
+            }
         }
 
-        foreach ($managerPermissions as $permission) {
-            Permission::create(['name' => $permission]);
-        }
-
-        foreach ($staffPermissions as $permission) {
-            Permission::create(['name' => $permission]);
-        }
 
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
@@ -97,7 +94,7 @@ class PermissionSeeder extends Seeder
         $staff->givePermissionTo($staffPermissions);
 
         $client = Role::create(['name' => 'client']);
-        //$client->givePermissionTo($permissions);
+        $client->givePermissionTo($permissions);
 
     }
 }

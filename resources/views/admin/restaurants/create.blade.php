@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @push('scripts')
-    <script type="text/javascript" src="{{ mix('/dist/js/slug.js', '../') }}" defer></script>
-    <script type="text/javascript" src="{{mix('/dist/js/admin.js', '../')}}" defer></script>
+    <script type="text/javascript" src="{{ mix('/dist/js/slug.js', '..') }}" defer></script>
+    <script type="text/javascript" src="{{mix('/dist/js/admin.js', '..')}}" defer></script>
 @endpush
 @section('body_class', 'management-table')
 @section('content')

@@ -1,12 +1,12 @@
 @extends('layouts.manager')
 @push('styles')
-    <link rel="stylesheet" type="text/css" href="{{ mix('/dist/css/libraries/jquery.timepicker.min.css', '../') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ mix('/dist/css/libraries/jquery.timepicker.min.css', '..') }}"/>
 @endpush
 @push('scripts')
     <meta name="tips-list-get-url" content="{{ route('staff.tip.get') }}">
-    <script src="{{ mix('/dist/js/libraries/jquery.timepicker.min.js', '../') }}"></script>
-    <script type="text/javascript" src="{{ mix('/dist/js/dashboard-header.js', '../') }}" defer></script>
-    <script type="module" src="{{ mix('/dist/js/staff/tip-list.js', '../') }}" defer></script>
+    <script src="{{ mix('/dist/js/libraries/jquery.timepicker.min.js', '..') }}"></script>
+    <script type="text/javascript" src="{{ mix('/dist/js/dashboard-header.js', '..') }}" defer></script>
+    <script type="module" src="{{ mix('/dist/js/staff/tip-list.js', '..') }}" defer></script>
 @endpush
 @section('body_class', 'management-table staff-tips')
 @section('content')

@@ -11,24 +11,24 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('/dist/css/app.css', '../') }}"/>
-    <link rel="stylesheet" href="{{ mix('/scss/app.css', '../') }}">
+    <link rel="stylesheet" href="{{ mix('/dist/css/app.css', '..') }}"/>
+    <link rel="stylesheet" href="{{ mix('/scss/app.css', '..') }}">
 
     <!-- Scripts -->
-    <script src="{{ mix('/dist/js/libraries/jquery.min.js', '../') }}"></script>
+    <script src="{{ mix('/dist/js/libraries/jquery.min.js', '..') }}"></script>
 
     <script>$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});</script>
 
-    <script src="{{ mix('/dist/js/app.js', '../') }}" defer></script>
+    <script src="{{ mix('/dist/js/app.js', '..') }}" defer></script>
 
     {{-- ############### JQUERY MOBILE ###############--}}
 
 
     {{-- ############### OVERLAY SCROLLBAR ###############--}}
-    <script src="{{ mix('/dist/js/libraries/OverlayScrollbars.min.js', '../') }}"></script>
-    <link rel="stylesheet" href="{{ mix('/dist/css/libraries/OverlayScrollbars.min.css', '../') }}"/>
+    <script src="{{ mix('/dist/js/libraries/OverlayScrollbars.min.js', '..') }}"></script>
+    <link rel="stylesheet" href="{{ mix('/dist/css/libraries/OverlayScrollbars.min.css', '..') }}"/>
 
-    <script src="{{ mix('/dist/js/libraries/OneSignalSDK.min.js', '../') }}" async></script>
+    <script src="{{ mix('/dist/js/libraries/OneSignalSDK.min.js', '..') }}" async></script>
     @if(App::environment(['production']))
         <script>
             window.OneSignal = window.OneSignal || [];
