@@ -1,5 +1,5 @@
 # Use the official PHP 8.2 image as a base
-FROM php:8.2-fpm
+FROM dunglas/frankenphp:1-php8.2-bookworm
 
 # Set working directory
 WORKDIR /var/www/html

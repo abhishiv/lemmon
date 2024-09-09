@@ -8,4 +8,5 @@ php artisan migrate --force
 # php artisan db:seed --force
 
 # Start PHP-FPM server
-php artisan serve
+# php artisan serve
+frankenphp php-server -r public/
