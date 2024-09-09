@@ -34,10 +34,11 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN npm install && npm run dev
 
 # Copy existing application directory contents
 COPY . .
+
+RUN npm install && npm run dev
 
 # Install PHP dependencies
 RUN composer install --no-autoloader --no-scripts
