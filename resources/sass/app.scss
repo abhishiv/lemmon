@@ -1,0 +1,191 @@
+@import "fonts";
+@import "_variables";
+@import "cart";
+@import "manager-menu";
+@import "pdf";
+@import "header-customer";
+@import "menu-customer";
+@import "general";
+@import "single-product";
+@import "card-payment";
+@import "admin-dashboard";
+@import "dashboard-table";
+@import "manager-dashboard";
+@import "manager-settings";
+@import "header-dashboard";
+@import "account";
+@import "tips-popup";
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.badge {
+  background-color: #CC295F;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.smooth-scale {
+  transform: scale(1.2);
+  transition: transform 0.5s ease; /* Adaugă o tranziție pentru transform */
+}
+
+input:checked + .slider {
+  background-color: #006ef5;
+}
+
+
+.group-input {
+  background: #B7E9FD !important;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #006ef5;
+}
+
+.delete-button {
+  background: #f2f2f2 !important;
+  color: #f54a5e !important;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.development-environment .dashboard-header,
+.development-environment .header {
+  /*background-color: #9d2f2f;*/
+}
+
+.error-page {
+  position: fixed;
+  background: #16212E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+}
+
+.error-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("/dist/img/lemmon-logo.svg");
+  background-repeat: no-repeat;
+  background-position: right 28px bottom -83px;
+}
+
+.error-page__inner {
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 640px;
+}
+
+.error-page__text {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error-page__title {
+  padding: 24px 0;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-align: center;
+  position: relative;
+}
+
+.error-page__subtitle {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.error-page__actions {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.error-page__powered-by {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.error-page__powered-by-text {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(197, 224, 255, 0.6);
+  margin-bottom: 15px;
+}
+
+.error-page__powered-by-logo {
+  width: 127px;
+}

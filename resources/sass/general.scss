@@ -1,0 +1,37 @@
+a:not([href]):not([class]) {
+  color: #fff;
+}
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.menu a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: $action-btn-hover;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.tooltip-inner {
+  max-width: 400px;
+}
+
+.multi-select {
+  height: auto !important;
+}
+
+.multi-select option {
+  background-color: #F2F2F2;
+  color: #6B7280;
+}
+
+.multi-select option[selected] {
+  background-color: #006EF5;
+  color: #fff;
+}

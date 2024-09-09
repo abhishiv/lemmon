@@ -1,0 +1,226 @@
+.page-manager {
+  height: 100%;
+  background: $admin-body-color !important;
+
+  .dashboard-header__view{
+    display: none;
+  }
+}
+
+
+.manager-edit-menu{
+  .edit-item-menu {
+    background-color: #e6e6e6;
+    width: 100%;
+    min-height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  .toggleItem{
+    cursor: pointer;
+  }
+
+  .item-list, .info-box {
+    background: #fff;
+    padding: 10px;
+  }
+
+  .item-list-body {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .panel-body p {
+    margin-bottom: 5px;
+  }
+
+  .info-box {
+    margin-bottom: 15px;
+  }
+
+  .item-list-footer {
+    padding-top: 10px;
+  }
+
+  .panel-heading a {
+    display: block;
+  }
+
+  .form-inline {
+    display: inline;
+  }
+
+  .form-inline select {
+    padding: 4px 10px;
+  }
+
+  .btn-menu-select {
+    padding: 4px 10px;
+    background-color: #3f83f8;
+    color: white;
+    border-radius: 5px
+  }
+
+  //.disabled {
+  //  pointer-events: none;
+  //  opacity: 0.7;
+  //}
+
+  .menu-item-bar {
+    background: #eee;
+    padding: 5px 10px;
+    border: 1px solid #d7d7d7;
+    margin-bottom: 5px;
+    width: 75%;
+    cursor: move;
+    display: block;
+  }
+
+  #serialize_output {
+    display: block;
+  }
+
+  .menulocation label {
+    font-weight: normal;
+    display: block;
+  }
+
+  body.dragging, body.dragging * {
+    cursor: move !important;
+  }
+
+  .dragged {
+    position: absolute;
+    z-index: 1;
+  }
+
+  ol.example li.placeholder {
+    position: relative;
+  }
+
+  ol.example li.placeholder:before {
+    position: absolute;
+  }
+
+  #menuitem {
+    list-style: none;
+  }
+
+  #menuitem ul {
+    list-style: none;
+  }
+
+  .input-box {
+    width: 75%;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+  }
+
+  .input-box .form-control {
+    width: 50%
+  }
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  margin-top: 70px;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+.activeTab {
+  color: #006ef5 !important;
+}
+/* Create an active/current tablink class */
+.tab button.activeTab {
+  background-color: #ccc;
+}
+
+.table-head {
+  display: flex;
+  font-weight: 600;
+  justify-content:space-between;
+  margin: 30px 3px 0 3px;
+}
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 561px;
+  overflow-y: auto;
+}
+
+.input-custom {
+  padding: .5rem .75rem;
+}
+
+//Create menu
+.manager-create-menu {
+  .item-list, .info-box {
+    background: #fff;
+    padding: 10px;
+  }
+
+  .item-list-body {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .panel-body p {
+    margin-bottom: 5px;
+  }
+
+  .info-box {
+    margin-bottom: 15px;
+  }
+
+  .item-list-footer {
+    padding-top: 10px;
+  }
+
+  .panel-heading a {
+    display: block;
+  }
+
+  .form-inline {
+    display: inline;
+  }
+
+  .form-inline select {
+    padding: 4px 10px;
+  }
+
+  .btn-menu-select {
+    padding: 4px 10px
+  }
+
+  //.disabled {
+  //  pointer-events: none;
+  //  opacity: 0.7;
+  //}
+
+}
+

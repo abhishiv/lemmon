@@ -1,0 +1,96 @@
+#tips-modal {
+  z-index: 9999;
+
+  .modal-dialog {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+
+    .tips {
+      padding-top: 20px;
+      border: none;
+      border-radius: 0;
+      position: fixed;
+      bottom: 0;
+
+      .modal-body {
+        .title {
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 1.22222;
+          letter-spacing: -0.01em;
+          margin-bottom: 25px;
+        }
+
+        .subtitle {
+          font-size: $fs-h4;
+          margin-bottom: 10px;
+        }
+
+        .options-row {
+          display: flex;
+          gap: 12px;
+        }
+
+        .options {
+          display: flex;
+          gap: 8px;
+          width: 50%;
+
+          .option {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid $box-shadow;
+            border-radius: 5px;
+            width: 33%;
+            flex-grow: 1;
+
+            input {
+              display: none;
+            }
+
+            label {
+              cursor: pointer;
+              font-size: $fs-p-large;
+              padding: 4px 5px;
+              color: $box-shadow;
+              text-align: center;
+            }
+          }
+        }
+
+        .custom-tip {
+          width: 50%;
+          flex-grow: 1;
+        }
+      }
+    }
+
+    .checked {
+      background: #047aff !important;
+      border: 1px solid #047aff !important;
+
+      label {
+        color: #fff !important;
+      }
+    }
+
+    .button-container {
+      margin: 0;
+      width: 100%;
+      gap: 12px;
+    }
+  }
+
+  .modal-body {
+    padding: 15px 20px;
+  }
+
+  .modal-footer {
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px 30px;
+  }
+}

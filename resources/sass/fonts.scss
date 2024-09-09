@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/dist/fonts/inter/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/dist/fonts/inter/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/dist/fonts/inter/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/dist/fonts/inter/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ----- Start: Icons ----- */
+@font-face {
+    font-family: 'lemmon-icons';
+    src:
+      url('/dist/fonts/lemmon-icons/lemmon-icons.ttf?u6mdpp') format('truetype'),
+      url('/dist/fonts/lemmon-icons/lemmon-icons.woff?u6mdpp') format('woff'),
+      url('/dist/fonts/lemmon-icons/lemmon-icons.svg?u6mdpp#lemmon-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'lemmon-icons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-back:before {
+    content: "\e90b";
+  }
+  .icon-cart:before {
+    content: "\e90c";
+  }
+  .icon-magnifier-2:before {
+    content: "\e90d";
+  }
+  .icon-minus-outline:before {
+    content: "\e90e";
+  }
+  .icon-printer:before {
+    content: "\e954";
+  }
+  .icon-scooter:before {
+    content: "\e90a";
+  }
+  .icon-checkmark:before {
+    content: "\e904";
+  }
+  .icon-trash:before {
+    content: "\e905";
+  }
+  .icon-minus:before {
+    content: "\e906";
+  }
+  .icon-magnifier:before {
+    content: "\e907";
+  }
+  .icon-close:before {
+    content: "\e908";
+  }
+  .icon-checkmark-circle:before {
+    content: "\e909";
+  }
+  .icon-arrow-down:before {
+    content: "\e900";
+  }
+  .icon-car:before {
+    content: "\e901";
+  }
+  .icon-food:before {
+    content: "\e902";
+  }
+  .icon-plus:before {
+    content: "\e903";
+  }
+  .icon-info:before {
+    content: "\ea0c";
+  }
+  /* ----- End: Icons ----- */

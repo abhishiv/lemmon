@@ -1,0 +1,138 @@
+.account {
+  overflow: hidden;
+  height: 100vh;
+  background: $admin-body-color;
+
+  .layout {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    svg {
+      fill: #fff;
+      width: 180px;
+      height: auto;
+    }
+  }
+
+  &__form {
+    background: #fff;
+    padding: 50px;
+    width: 412px;
+
+    .success-message {
+      color: #02a102;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 15px;
+      font-family: $page-title-font;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: 500;
+      }
+    }
+
+    .button-container {
+      margin-top: 10px;
+
+      .primary-button {
+        width: 100%;
+        margin-top: 30px;
+        margin-right: 0;
+      }
+    }
+
+    .forgot-password {
+      .primary-button {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .email {
+
+    .email-icon {
+      width: 76px;
+      height: 76px;
+      background: #D8F1FB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 40px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    span {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    a {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+
+  .custom-field {
+    margin: 10px 0;
+
+    input {
+      background: $customer-body-color;
+      border-color: $customer-body-color;
+      width: 100%;
+      height: 45px;
+
+      &::placeholder {
+        color: #000;
+        font-family: $page-title-font;
+        font-size: $fs-h4;
+      }
+    }
+  }
+}
+
+.error-page {
+  height: 100%;
+
+  .wrap {
+    width: 100%;
+    @media(max-width: 599px) {
+      font-size: $fs-h2;
+    }
+  }
+
+  .error-type{
+    font-size: $fs-h1 + 4px;
+  }
+}
+
+.no-found-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.abs {
+  position: absolute;
+  top: 57%;
+
+  @media(max-width: 599px){
+    top:62%;
+  }
+}

@@ -1,0 +1,415 @@
+.full-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100vh !important;
+}
+
+.success-payment {
+  margin-top: 0;
+  z-index: 9999;
+  height: 100%;
+
+  .success {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #16212E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("/dist/img/lemmon-logo.svg");
+      background-repeat: no-repeat;
+      background-position: right 28px bottom -83px;
+    }
+
+    &__text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &__title {
+        padding: 24px 0;
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        text-align: center;
+        position: relative;
+      }
+
+      &__subtitle {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+    }
+
+    &__order-number {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #B7E9FD;
+      text-align: center;
+    }
+
+    .success__text-message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    &__img {
+      max-width: 410px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+
+      img {
+        height: 390px;
+        width: auto;
+        position: absolute;
+        top: 210px;
+      }
+    }
+
+    .overlay {
+      display: none;
+      //z-index: 1;
+
+      .overlay-box {
+        z-index: 2;
+        width: 100%;
+        margin: 10px;
+        background: $background-color;
+        padding: 20px;
+
+        .close-modal {
+          display: flex;
+          justify-content: right;
+          cursor: pointer;
+
+          .close {
+            max-width: 15px;
+            max-height: 15px;
+          }
+        }
+
+        .scrollable-list {
+          height: 270px;
+          overflow-y: scroll;
+        }
+
+        h3 {
+          padding-bottom: 20px;
+          font-size: $fs-h3;
+          font-family: $description-font;
+        }
+
+        .box {
+          background: #fff;
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+          text-align: left;
+          margin-bottom: 10px;
+
+          .ready {
+            color: $status-received-collection;
+          }
+
+          .preparing {
+            color: $status-received-collection;
+          }
+
+          .open {
+            color: $tiny-text;
+          }
+
+          .right {
+            text-align: right;
+          }
+
+          .top-box {
+            padding: 15px;
+            background: $secondary-admin-body;
+
+            .new {
+              color: $tiny-text;
+            }
+
+            .preparing {
+              color: $status-received-collection;
+            }
+
+            .ready {
+              color: $status-active;
+            }
+
+            .title {
+              color: #fff;
+              font-size: $fs-h4;
+              font-family: $description-font;
+              font-weight: 400;
+
+              .order {
+                color: #fff;
+              }
+
+            }
+          }
+
+          .body-box {
+            padding: 0 12px;
+
+            .content-box {
+              padding: 10px 15px;
+
+              .product-view {
+                padding: 5px 0;
+                border-bottom: 2px solid $customer-body-color;
+
+                .prod-name {
+                  font-size: $fs-h4;
+                  padding: 0;
+                  color: $admin-body-color;
+                  font-family: $description-font;
+                  //white-space: nowrap;
+
+                  span {
+                    color: $meta-data;
+                  }
+                }
+
+                .prod-price {
+                  font-size: $fs-h4;
+                  padding: 0;
+                  color: $action-btn;
+                  font-family: $description-font;
+                }
+              }
+            }
+          }
+
+          .total {
+            padding: 0 15px 10px 15px;
+            color: $admin-body-color;
+            font-weight: 700;
+            font-size: $fs-h4;
+          }
+        }
+
+        label {
+          display: flex;
+          font-size: $fs-h4;
+          color: $admin-body-color;
+          font-family: $description-font;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        }
+
+        .send-email {
+          .email {
+            border: none;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 45px;
+
+            &:focus {
+              overflow: hidden;
+            }
+          }
+
+          .message {
+            margin: 0;
+            text-align: left;
+            padding-top: 5px;
+            color: #0f980f;
+          }
+
+          .button-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+
+            .primary-button {
+              width: fit-content;
+              border-radius: 25px;
+            }
+
+            .secondary-button {
+              border: none;
+              width: fit-content;
+              border-radius: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .success__inner {
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .success__actions {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    gap: 12px;
+  }
+
+  .success__powered-by {
+    position: absolute;
+    left: 42px;
+    bottom: 42px;
+  }
+
+  .success__powered-by-text {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: rgba(197, 224, 255, 0.6);
+    margin-bottom: 15px;
+  }
+
+  .success__powered-by-logo {
+    width: 127px;
+  }
+
+}
+
+.welcome-screen {
+  .success {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    inset: 0;
+
+    &::before {
+      z-index: 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+      z-index: 1;
+    }
+  }
+
+  .success__text__title {
+    font-size: 42px;
+    line-height: 1.6;
+  }
+}
+
+.failed-payment {
+  margin-top: 0;
+  z-index: 9999;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  .cart-list {
+    height: 100%;
+  }
+}
+
+#order-preparing {
+  display: none;
+}
+
+#order-enjoy {
+  display: none;
+}
+
+.order-overview-screen {
+  overflow: hidden;
+}
+
+.cash-payment {
+  img {
+    width: $fs-h2;
+  }
+}
+
+.scrollable-list::-webkit-scrollbar {
+  background: #fff;
+  width: 1px;
+}
+
+.error-message {
+  .button-container {
+    margin-top: 15px !important;
+  }
+}
+
+.center-btn {
+  margin-top: 15px;
+  justify-content: center;
+
+  .close-modal {
+    margin-right: 0 !important;
+  }
+
+  .primary-button{
+    border-radius: 25px;
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+@media (max-height: 670px) {
+  .success__img img {
+    height: 300px !important;
+    margin-top: -40px;
+  }
+}
+
+@media (max-height: 550px) {
+  .success__img img {
+    height: 225px !important;
+    margin-top: 0;
+  }
+}
+
+
+.cart-list{
+  .primary-button{
+    border-radius: 25px;
+  }
+}

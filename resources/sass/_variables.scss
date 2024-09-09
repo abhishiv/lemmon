@@ -1,0 +1,56 @@
+//---------------------------------------------
+// 1. Fonts
+//---------------------------------------------
+
+@font-face {
+  font-family: 'Univers LT Std';
+  src: url("/dist/fonts/UniversLTStd.otf");
+}
+
+@font-face {
+  font-family: 'Univers 45 Light';
+  src: url("/dist/fonts/UniversLTStd-Light.otf");
+}
+
+$section-title-font: 'Univers LT Std';
+$page-title-font: 'Univers LT Std';
+$description-font: 'Univers LT Std';
+$details-font: 'Univers 45 Light';
+
+
+//---------------------------------------------
+// 2. Colors
+//---------------------------------------------
+
+$admin-body-color: #16212E;
+$secondary-admin-body: #243141;
+$customer-body-color: #F2F2F2;
+$action-btn: #006EF5;
+$action-btn-hover: #B7E9FD;
+$status-blocked: #F54A5E;
+$status-blocked-bg: #FC8267;
+$status-active: #00CA4E;
+//$status-active: #00F5B5;
+$status-received-kitchen: #62FFF6;
+//$status-received-collection: #EAEA5E;
+$status-received-collection: #FFBD44;
+$box-shadow: #B3B3B3;
+//$tiny-text:#F7D9E3;
+$tiny-text:#FF605C;
+$menu-item-active: #fff;
+$background-color: #E2E2E2;
+$meta-data: #A7A7A7;
+$add-effect:  #20c997;
+
+//---------------------------------------------
+// 3. Font Size
+//---------------------------------------------
+
+$fs-h1: 36px;
+$fs-h2: 24px;
+$fs-h3: 20px;
+$fs-h3-light: 17px;
+$fs-h4: 14px;
+$fs-p-large: 12px;
+$fs-p-medium: 10px;
+

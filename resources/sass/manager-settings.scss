@@ -1,0 +1,20 @@
+.printers__actions,
+.admin-delivery-cities__actions {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.printers__delete,
+.printers__delete:hover,
+.printers__delete:focus,
+.admin-delivery-cities__delete,
+.admin-delivery-cities__delete:hover,
+.admin-delivery-cities__delete:focus {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    color: #f54a5e;
+}
