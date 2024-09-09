@@ -9,4 +9,4 @@ php artisan migrate --force
 
 # Start PHP-FPM server
 # php artisan serve
-php artisan octane:start
+php artisan serve
