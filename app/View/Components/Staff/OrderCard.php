@@ -39,46 +39,42 @@ class OrderCard extends Component
     public function __construct($order, $foodTypes, $availablePrinters)
     {
         $this->order = $order;
-
         $this->foodTypes = $foodTypes;
-
         $this->availablePrinters = $availablePrinters;
 
-        $this->foodStatuses = $order->foodStatuses()->pluck('status', 'food_type_id')->all();
+        // Instead of querying the foodStatuses, use preloaded data
+        $this->foodStatuses = $order->foodStatuses->pluck('status', 'food_type_id')->all();
 
+        // Use the preloaded items instead of querying again
         if($order->isParent) {
-            $this->getItemsGroupedOrder();
+            $this->getItemsGroupedOrder($order->items);
         } else {
-            $this->getItemsOrder();
+            $this->getItemsOrder($order->items);
         }
 
         $this->filteringClasses = $this->getFilteringClasses();
-
-        $this->hasOnlinePayment = $order->isParent && $order->children()->where('payment_method', \App\Models\Order::ONLINE)->count();
+        $this->hasOnlinePayment = $order->isParent && $order->children->where('payment_method', \App\Models\Order::ONLINE)->count();
     }
 
-    /**
-     * Get the items for a normal, ungrouped order
-     *
-     * @return void
-     */
-    private function getItemsOrder() {
+private function getItemsOrder($items)
+{
+    // Filter the items by product type directly from the preloaded data
+    $this->foodItems = $items->filter(fn($item) => $item->products->type === Product::RESTAURANT);
+    $this->barItems = $items->filter(fn($item) => $item->products->type === Product::BAR);
+    $this->itemsByFoodType = $order->foodByTypes;
+}
 
-        $this->foodItems = $this->order->items()->whereRelation('products', 'type', Product::RESTAURANT)->get();
-        $this->barItems = $this->order->items()->whereRelation('products', 'type', Product::BAR)->get();
+private function getItemsGroupedOrder($items)
+{
+    // Similar optimization for grouped items
+    $this->groupedFoodItems = $this->groupItemsByType($items, Product::RESTAURANT);
+    $this->groupedBarItems = $this->groupItemsByType($items, Product::BAR);
+}
 
-        $this->itemsByFoodType = $this->order->foodByTypes;
-    }
-
-    /**
-     * Get the items for a grouped order
-     *
-     * @return void
-     */
-    private function getItemsGroupedOrder() {
-        $this->getFoodItemsGroupedOrder();
-        $this->getBarItemsGroupedOrder();
-    }
+private function groupItemsByType($items, $type)
+{
+    return $items->filter(fn($item) => $item->products->type === $type)->groupBy(fn($item) => $item->products->food_type_id);
+}
 
     private function getFoodItemsGroupedOrder() {
         $foodItemsByType = [];

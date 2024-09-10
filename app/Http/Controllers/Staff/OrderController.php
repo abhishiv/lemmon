@@ -37,16 +37,26 @@ class OrderController extends Controller
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function get()
-    {
-        $orders = $this->orderService->activeOrders()->merge($this->orderService->closedOrders());
+public function get()
+{
+    // Retrieve active and closed orders with eager loading to prevent N+1 queries
+    $orders = $this->orderService->activeOrders()
+        ->merge($this->orderService->closedOrders())
+        ->load([
+            'foodStatuses',
+            'items.products',
+            'items.itemBundles.entity',
+            'children' => function ($query) {
+                $query->where('payment_method', Order::ONLINE);
+            }
+        ]);
 
-        $restaurant = Restaurant::find(auth()->user()->restaurant_id);
+    $restaurant = Restaurant::with('foodTypes')->find(auth()->user()->restaurant_id);
 
-        $availablePrinters = $restaurant->getAvailablePrinterTypes();
+    $availablePrinters = $restaurant->getAvailablePrinterTypes();
 
-        return Blade::renderComponent(new ListOrders($orders, $restaurant, $availablePrinters));
-    }
+    return Blade::renderComponent(new ListOrders($orders, $restaurant, $availablePrinters));
+}
 
     public function ordersOverview(Request $request): array
     {

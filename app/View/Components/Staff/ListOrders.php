@@ -22,13 +22,12 @@ class ListOrders extends Component
 
     public function __construct($orders, $restaurant, $availablePrinters)
     {
-        $this->orders = $orders;
+    $this->orders = $orders;
+    $this->restaurant = $restaurant;
+    $this->availablePrinters = $availablePrinters;
 
-        $this->restaurant = $restaurant;
-
-        $this->availablePrinters = $availablePrinters;
-
-        $this->foodTypes = $restaurant->foodTypes()->orderBy('order', 'ASC')->pluck('name', 'id')->all();
+    // Food types are already loaded via the controller
+    $this->foodTypes = $restaurant->foodTypes->pluck('name', 'id')->all();
     }
 
     /**
