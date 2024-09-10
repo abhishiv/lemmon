@@ -56,112 +56,29 @@ class OrderCard extends Component
         $this->hasOnlinePayment = $order->isParent && $order->children->where('payment_method', \App\Models\Order::ONLINE)->count();
     }
 
-private function getItemsOrder($items)
-{
-    // Filter the items by product type directly from the preloaded data
-    $this->foodItems = $items->filter(fn($item) => $item->products->type === Product::RESTAURANT);
-    $this->barItems = $items->filter(fn($item) => $item->products->type === Product::BAR);
-    $this->itemsByFoodType = $order->foodByTypes;
-}
-
-private function getItemsGroupedOrder($items)
-{
-    // Similar optimization for grouped items
-    $this->groupedFoodItems = $this->groupItemsByType($items, Product::RESTAURANT);
-    $this->groupedBarItems = $this->groupItemsByType($items, Product::BAR);
-}
-
-private function groupItemsByType($items, $type)
-{
-    return $items->filter(fn($item) => $item->products->type === $type)->groupBy(fn($item) => $item->products->food_type_id);
-}
-
-    private function getFoodItemsGroupedOrder() {
-        $foodItemsByType = [];
-
-        $items = OrderItem::with(['products', 'order', 'itemBundles', 'itemBundles.entity'])
-            ->whereRelation('products', 'type', Product::RESTAURANT)
-            ->whereRelation('order', 'parent_id', $this->order->id)
-            ->get();
-
-        foreach($items as $item) {
-            $foodTypeId = $item->products->food_type_id;
-            if($item->itemBundles->count() > 0) {
-                $foodTypeId .= '_' . $item->itemBundles->first()->entity_id;
-            }
-
-            if(isset($foodItemsByType[$foodTypeId])) {
-                $existingKey = null;
-                foreach($foodItemsByType[$foodTypeId] as $key => $foodItem) {
-                    if($foodItem['product_id'] == $item->product_id && $foodItem['notes'] == $item->notes && $foodItem['bundle']->pluck('entity_id', 'entity_type') == $item->itemBundles->pluck('entity_id', 'entity_type')) {
-                        $existingKey = $key;
-                        break;
-                    }
-                }
-
-                if($existingKey !== null) {
-                    $foodItemsByType[$foodTypeId][$existingKey]['quantity'] += $item->quantity;
-                    continue;
-                }
-            }
-
-            $foodItemsByType[$item->products->food_type_id][] = [
-                'product_id' => $item->product_id,
-                'name' => $item->products->name,
-                'quantity' => $item->quantity,
-                'notes' => $item->notes,
-                'bundle' => $item->itemBundles
-            ];
-
-
-        }
-
-        $this->groupedFoodItems = $foodItemsByType;
-    }
-
-    private function getBarItemsGroupedOrder() {
-        $barItemsByType = [];
-
-        $items = OrderItem::with(['products', 'order', 'itemBundles',  'itemBundles.entity'])
-            ->whereRelation('products', 'type', Product::BAR)
-            ->whereRelation('order', 'parent_id', $this->order->id)
-            ->get();
-
-        foreach ($items as $item) {
-            $foodTypeId = $item->id;
-
-            if ($item->itemBundles->count() > 0) {
-                $foodTypeId .= '_' . $item->itemBundles->first()->entity_id;
-            }
-
-            if (isset($barItemsByType[$foodTypeId])) {
-                $existingKey = null;
-                foreach ($barItemsByType[$foodTypeId] as $key => $barItem) {
-                    if ($barItem['product_id'] == $item->product_id && $barItem['notes'] == $item->notes && $barItem['bundle']->pluck('entity_id', 'entity_type') == $item->itemBundles->pluck('entity_id', 'entity_type')) {
-                        $existingKey = $key;
-                        break;
-                    }
-                }
-
-                if ($existingKey !== null) {
-                    $barItemsByType[$foodTypeId][$existingKey]['quantity'] += $item->quantity;
-                    continue;
-                }
-            }
-
-            $barItemsByType[$foodTypeId] = [
-                'product_id' => $item->product_id,
-                'name' => $item->products->name,
-                'quantity' => $item->quantity,
-                'notes' => $item->notes,
-                'bundle' => $item->itemBundles
-            ];
-        }
-        $this->groupedBarItems = $barItemsByType;
-    }
-
-    private function getFilteringClasses()
+    private function getItemsOrder($items)
     {
+        // Filter the items by product type directly from the preloaded data
+        $this->foodItems = $items->filter(fn($item) => $item->products->type === Product::RESTAURANT);
+        $this->barItems = $items->filter(fn($item) => $item->products->type === Product::BAR);
+        $this->itemsByFoodType = $order->foodByTypes;
+    }
+
+    private function getItemsGroupedOrder($items)
+    {
+        // Similar optimization for grouped items
+        $this->groupedFoodItems = $this->groupItemsByType($items, Product::RESTAURANT);
+        $this->groupedBarItems = $this->groupItemsByType($items, Product::BAR);
+    }
+
+    private function groupItemsByType($items, $type)
+    {
+        return $items->filter(fn($item) => $item->products->type === $type)->groupBy(fn($item) => $item->products->food_type_id);
+    }
+
+    private function getFilteringClasses() 
+    {
+
         $classes = [];
 
         $classes[] = 'order-card--status-' . $this->order->status;

@@ -49,7 +49,7 @@
                         <span class="order-card__time">{{ $order->created_at->format('g:i A') }}</span>
                         @if(in_array($order->payment_method, [\App\Models\Order::CASH, \App\Models\Order::CARD]) || !$order->payment_method)
                             <span
-                                class="order-card__amount">@lang('labels.currency') {{ priceFormat($order->totalAmount, '.', '\'') }}</span>
+                                class="order-card__amount">@lang('labels.currency') {{ priceFormat(0, '.', '\'') }}</span>
                         @endif
                     </div>
                 </div>
