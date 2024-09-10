@@ -115,7 +115,16 @@ class DashboardController extends Controller
 
     public function index(Request $request): Factory|View|Application
     {
-        $orders = $this->orderService->activeOrders()->merge($this->orderService->closedOrders());
+    $orders = $this->orderService->activeOrders()
+        ->merge($this->orderService->closedOrders())
+        ->load([
+            'foodStatuses',
+            'items.products',
+            'items.itemBundles.entity',
+            'children' => function ($query) {
+                $query->where('payment_method', Order::ONLINE);
+            }
+        ]);
 
         $restaurant = Restaurant::find(auth()->user()->restaurant_id);
 
