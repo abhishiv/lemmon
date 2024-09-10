@@ -12,9 +12,6 @@
                         class="order-card__service-icon order-card__service-icon--{{ $order->service_method }}"></span>
                     <span class="order-card__service-text">@lang('labels.'  . $order->service_method)</span>
                 </span>
-                @if ($order->totalTips > 0)
-                    <span class="order-card__tips">@lang('labels.tip-included')</span>
-                @endif
                 @if(($order->status == \App\Models\Order::NEW || $order->status == \App\Models\Order::PREPARING) && !$hasOnlinePayment)
                     <div class="order-card__menu">
                         <button class="order-card__menu-toggle">
