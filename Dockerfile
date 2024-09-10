@@ -1,5 +1,3 @@
-FROM ghcr.io/roadrunner-server/roadrunner:2024 as roadrunner
-
 # Use the official PHP 8.2 image as a base
 FROM php:8.2-fpm
 
@@ -22,6 +20,7 @@ RUN apt-get update && apt-get install -y \
     postgresql-client \
     libpq-dev \
     nginx \
+    netcat-traditional \
     imagemagick \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
@@ -55,11 +54,12 @@ RUN composer dump-autoload --optimize
 # Set up permissions (if needed)
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-COPY --from=roadrunner /usr/bin/rr /var/www/html/rr
 
 # Copy entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose the specified port
 EXPOSE 8000

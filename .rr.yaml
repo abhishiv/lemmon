@@ -1,5 +1,11 @@
 version: "3"
 
+rpc:
+  listen: "tcp://127.0.0.1:6001"
+
+server:
+  command: "php artisan octane:start --server=roadrunner --host=127.0.0.1 --port=8000"
+
 http:
   address: 0.0.0.0:8000
   middleware: ["static", "gzip"]

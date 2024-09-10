@@ -1,13 +1,13 @@
 #!/bin/sh
-set -e
 
-# Run database migrations
-php artisan migrate --force
+# Start PHP-FPM in the background
+php-fpm -D
 
-# Run database seeders
-# php artisan db:seed --force
+# Wait for PHP-FPM to be ready
+while ! nc -z 0.0.0.0 9000; do  
+  echo "sleeping" 
+  sleep 0.1
+done
 
-# Start PHP-FPM server
-# php artisan serve
-# php artisan serve --host=0.0.0.0
-php artisan octane:start -n --host 0.0.0.0 --rr-config ./.rr.yaml
+# Start NGINX
+nginx -g 'daemon off;'
