@@ -51,6 +51,8 @@ RUN composer install --no-autoloader --no-scripts
 # Generate autoload files
 RUN composer dump-autoload --optimize
 
+RUN php artisan livewire:publish --assets
+
 # Set up permissions (if needed)
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 

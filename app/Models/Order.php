@@ -223,7 +223,7 @@ class Order extends Model
     public function isParent(): Attribute
     {
         return new Attribute(
-            get: fn() => $this->is_grouped && is_null($this->parent_id),
+            get: fn() =>  is_null($this->parent_id),
         );
     }
 

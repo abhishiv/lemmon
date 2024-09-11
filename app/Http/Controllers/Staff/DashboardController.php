@@ -115,16 +115,22 @@ class DashboardController extends Controller
 
     public function index(Request $request): Factory|View|Application
     {
-    $orders = $this->orderService->activeOrders()
-        ->merge($this->orderService->closedOrders())
-        ->load([
+
+        $orders1 = Order::query()->whereNull('parent_id');
+
+        $orders1->with(['table', 'items', 'deliveryInformation', 'pickupDetails']);
+        $activeOrders = $orders1->with([
             'foodStatuses',
             'items.products',
             'items.itemBundles.entity',
             'children' => function ($query) {
                 $query->where('payment_method', Order::ONLINE);
             }
-        ]);
+        ])->get(); // This retrieves a collection with eager-loaded relationships
+
+        // Merge the two collections
+        $orders = $activeOrders;
+
 
         $restaurant = Restaurant::find(auth()->user()->restaurant_id);
 

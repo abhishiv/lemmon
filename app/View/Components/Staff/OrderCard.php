@@ -51,6 +51,7 @@ class OrderCard extends Component
         } else {
             $this->getItemsOrder($order->items);
         }
+        $this->items = $order->items;
 
         $this->filteringClasses = $this->getFilteringClasses();
         $this->hasOnlinePayment = $order->isParent && $order->children->where('payment_method', \App\Models\Order::ONLINE)->count();
@@ -61,7 +62,7 @@ class OrderCard extends Component
         // Filter the items by product type directly from the preloaded data
         $this->foodItems = $items->filter(fn($item) => $item->products->type === Product::RESTAURANT);
         $this->barItems = $items->filter(fn($item) => $item->products->type === Product::BAR);
-        $this->itemsByFoodType = $order->foodByTypes;
+        $this->itemsByFoodType = $this->order->foodByTypes;
     }
 
     private function getItemsGroupedOrder($items)

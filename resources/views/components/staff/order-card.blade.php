@@ -63,7 +63,6 @@
                 @if($order->isParent)
                     @include('staff.dashboard.parts.grouped-order')
                 @else
-
                     @include('staff.dashboard.parts.order')
                 @endif
 
